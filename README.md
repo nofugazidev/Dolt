@@ -10,9 +10,9 @@ AsyncStorage for local data persistence
 
 Custom Components for a native feel
 
-Optional: Redux / Context API (if used)
-
 ✨ Features:
+🚀 Authentication
+
 ✅ Add, edit, and delete tasks
 
 📌 Mark tasks as completed or pending
@@ -21,14 +21,6 @@ Optional: Redux / Context API (if used)
 
 🔍 Simple and intuitive UI for distraction-free productivity
 
-🌙 Light/Dark mode support (if implemented)
-
 💾 Offline storage using AsyncStorage
 
-🚀 Goals:
-Test and improve core React Native development skills
-
-Understand native performance optimization
-
-Explore scalable component architecture and reusable logic
 
