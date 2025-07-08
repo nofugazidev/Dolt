@@ -5,6 +5,10 @@ import Board from "../screens/onboarding/Board";
 import Manage from "../screens/onboarding/Manage";
 import Create from "../screens/onboarding/Create";
 import Organize from "../screens/onboarding/Organize";
+import Welcome from "../screens/onboarding/Welcome";
+
+import Login from "../screens/auth/Login";
+import Register from "../screens/auth/Register";
 
 export type RootStackParamList = {
     Splash: undefined,
@@ -12,6 +16,9 @@ export type RootStackParamList = {
     Manage: undefined,
     Create: undefined,
     Organize: undefined
+    Welcome: undefined,
+    Login: undefined,
+    Register: undefined,
 }
 
 const Stack =  createNativeStackNavigator<RootStackParamList>()
@@ -24,6 +31,9 @@ const AppNavigator = () => {
             <Stack.Screen name="Manage" component={Manage} />
             <Stack.Screen name="Create" component={Create} />
             <Stack.Screen name="Organize" component={Organize} />
+            <Stack.Screen name="Welcome" component={Welcome} />
+            <Stack.Screen name="Login" component={Login} />
+            <Stack.Screen name="Register" component={Register} />
         </Stack.Navigator>
     )
 }

@@ -2,11 +2,9 @@ import { Text, View, StyleSheet, TouchableOpacity, Image } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import React from 'react';
 import { colors } from '../../utils/colors';
-import { useNavigation } from '@react-navigation/native';
 
-const Create = () => {
+const Create = ({navigation}: any) => {
 
-  const navigation = useNavigation()
 
   const goBack = () => {
     navigation.goBack()
@@ -14,7 +12,7 @@ const Create = () => {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.header}>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.navigate('Welcome')}>
           <Text style={styles.skipText}>skip</Text>
         </TouchableOpacity>
       </View>
@@ -39,7 +37,7 @@ const Create = () => {
             <Text style={styles.backText}>Back</Text>
           </TouchableOpacity>
 
-          <TouchableOpacity style={styles.next}>
+          <TouchableOpacity style={styles.next} onPress={() => navigation.navigate('Organize')}>
             <Text style={styles.nextText}>Next</Text>
           </TouchableOpacity>
         </View>
@@ -115,7 +113,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'transparent',
   },
   next: {
-    backgroundColor: colors.primary[200],
+    backgroundColor: colors.primary[100],
     paddingVertical: 12,
     paddingHorizontal: 24,
     borderRadius: 4,
