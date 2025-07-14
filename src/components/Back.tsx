@@ -1,12 +1,15 @@
-import { Text, View } from 'react-native'
-import React from 'react'
+import { TouchableOpacity, Image } from 'react-native';
+import React from 'react';
 
-const Back = () => {
+const Back = ({ navigation }: any) => {
+  // const handleBack = () => {
+  //   navigation.goBack
+  // };
   return (
-    <View>
-      <Text>Back</Text>
-    </View>
-  )
-}
+    <TouchableOpacity onPress={() => navigation.goBack()}>
+      <Image source={require('../../assets/onboarding/arrow-left.png')} />
+    </TouchableOpacity>
+  );
+};
 
-export default Back
+export default Back;
