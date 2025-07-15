@@ -122,7 +122,7 @@ const styles = StyleSheet.create({
   },
   label: {
     color: '#ffffffde',
-    fontSize: 20,
+    fontSize: 18,
   },
   input: {
     borderStyle: 'solid',
@@ -132,14 +132,14 @@ const styles = StyleSheet.create({
     paddingVertical: 15,
     borderRadius: 4,
     color: colors.white[100],
-    fontSize: 18,
+    fontSize: 16,
   },
   logBtn: {
     backgroundColor: colors.primary[100],
     alignItems: 'center',
     paddingVertical: 15,
     borderRadius: 4,
-    marginTop: 40,
+    marginTop: 30,
   },
   logText: {
     color: '#fff',

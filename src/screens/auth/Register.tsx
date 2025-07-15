@@ -118,7 +118,7 @@ const styles = StyleSheet.create({
     marginTop: 50,
     width: '100%',
     flexDirection: 'column',
-    gap: 50,
+    gap: 30,
   },
   loginHeader: {
     color: '#fff',
@@ -137,7 +137,7 @@ const styles = StyleSheet.create({
   },
   label: {
     color: '#ffffffde',
-    fontSize: 20,
+    fontSize: 18,
   },
   input: {
     borderStyle: 'solid',
@@ -147,14 +147,14 @@ const styles = StyleSheet.create({
     paddingVertical: 15,
     borderRadius: 4,
     color: colors.white[100],
-    fontSize: 18,
+    fontSize: 16,
   },
   registerBtn: {
     backgroundColor: colors.primary[100],
     alignItems: 'center',
     paddingVertical: 15,
     borderRadius: 4,
-    marginTop: 30,
+    marginTop: 0,
   },
   registerText: {
     color: '#fff',
@@ -165,7 +165,7 @@ const styles = StyleSheet.create({
   },
   line: {
     width: '100%',
-    paddingVertical: 20
+    paddingVertical: 14,
   },
   buttons: {
     gap: 10,
