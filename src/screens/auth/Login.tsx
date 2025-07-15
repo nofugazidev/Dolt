@@ -6,7 +6,7 @@ import {
   Image,
   TextInput,
 } from 'react-native';
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { colors } from '../../utils/colors';
 
@@ -14,6 +14,13 @@ const Login = ({ navigation }: any) => {
   const handleBack = () => {
     navigation.goBack();
   };
+  const inputRef = useRef<TextInput>(null);
+
+  useEffect(() => {
+    if (inputRef.current) {
+      inputRef.current.focus();
+    }
+  }, []);
   return (
     <SafeAreaView style={styles.container}>
       <TouchableOpacity style={styles.header} onPress={handleBack}>
@@ -30,6 +37,7 @@ const Login = ({ navigation }: any) => {
               placeholder="Enter your email"
               style={styles.input}
               placeholderTextColor="#ffffff40"
+              ref={inputRef}
             />
           </View>
           <View style={styles.inputContainer}>
@@ -39,6 +47,7 @@ const Login = ({ navigation }: any) => {
               style={styles.input}
               placeholderTextColor="#ffffff40"
               secureTextEntry={true}
+              ref={inputRef}
             />
           </View>
 
@@ -46,7 +55,31 @@ const Login = ({ navigation }: any) => {
             <Text style={styles.logText}>Login</Text>
           </TouchableOpacity>
 
-          <Image source={require('../../../assets/auth/orLine.png')} style={styles.line} />
+          <Image
+            source={require('../../../assets/auth/orLine.png')}
+            style={styles.line}
+          />
+
+          <View style={styles.buttons}>
+            <TouchableOpacity style={styles.regBtn}>
+              <Image source={require('../../../assets/auth/google.png')} />
+              <Text style={styles.regText}>Login with Google</Text>
+            </TouchableOpacity>
+
+            <TouchableOpacity style={styles.regBtn}>
+              <Image source={require('../../../assets/auth/apple.png')} />
+              <Text style={styles.regText}>Login with Apple</Text>
+            </TouchableOpacity>
+          </View>
+        </View>
+      </View>
+
+      <View style={styles.footer}>
+        <View style={styles.footerMain}>
+          <Text style={styles.footerQuest}>Don't have an account?</Text>
+          <TouchableOpacity onPress={()=> navigation.navigate('Register')}>
+            <Text style={styles.footerText}>Register</Text>
+          </TouchableOpacity>
         </View>
       </View>
     </SafeAreaView>
@@ -96,7 +129,7 @@ const styles = StyleSheet.create({
     borderColor: colors.gray[200],
     borderWidth: 1,
     paddingHorizontal: 10,
-    paddingVertical: 20,
+    paddingVertical: 15,
     borderRadius: 4,
     color: colors.white[100],
     fontSize: 18,
@@ -104,7 +137,7 @@ const styles = StyleSheet.create({
   logBtn: {
     backgroundColor: colors.primary[100],
     alignItems: 'center',
-    paddingVertical: 20,
+    paddingVertical: 15,
     borderRadius: 4,
     marginTop: 40,
   },
@@ -116,6 +149,50 @@ const styles = StyleSheet.create({
     fontSize: 16,
   },
   line: {
-    width: '100%'
+    width: '100%',
+  },
+  buttons: {
+    gap: 10,
+    width: '100%',
+    paddingBottom: 24,
+  },
+  regBtn: {
+    backgroundColor: 'transparent',
+    alignItems: 'center',
+    paddingVertical: 15,
+    borderRadius: 4,
+    borderStyle: 'solid',
+    borderColor: colors.primary[100],
+    borderWidth: 1.5,
+    flexDirection: 'row',
+    justifyContent: 'center',
+    gap: 10,
+  },
+  regText: {
+    color: '#fff',
+    // width: '100%',
+    textAlign: 'center',
+    fontWeight: 400,
+    fontSize: 16,
+  },
+  footer: {
+    flex: 1,
+    textAlign: 'center',
+    justifyContent: 'flex-end',
+    flexDirection: 'column',
+    alignItems: 'center',
+    width: '100%',
+  },
+  footerMain: {
+    flexDirection: 'row',
+    width: '100%',
+    justifyContent: 'center',
+    gap: 5,
+  },
+  footerQuest: {
+    color: colors.gray[200]
+  },
+  footerText: {
+    color: '#fff',
   },
 });
