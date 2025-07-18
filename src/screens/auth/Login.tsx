@@ -51,7 +51,7 @@ const Login = ({ navigation }: any) => {
             />
           </View>
 
-          <TouchableOpacity style={styles.logBtn}>
+          <TouchableOpacity style={styles.logBtn} onPress={() => navigation.navigate('MainTab')}>
             <Text style={styles.logText}>Login</Text>
           </TouchableOpacity>
 

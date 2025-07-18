@@ -10,6 +10,8 @@ import Welcome from "../screens/onboarding/Welcome";
 import Login from "../screens/auth/Login";
 import Register from "../screens/auth/Register";
 
+import TabNavigator from "./TabNavigator";
+
 export type RootStackParamList = {
     Splash: undefined,
     Board: undefined,
@@ -19,6 +21,7 @@ export type RootStackParamList = {
     Welcome: undefined,
     Login: undefined,
     Register: undefined,
+    MainTab: undefined,
 }
 
 const Stack =  createNativeStackNavigator<RootStackParamList>()
@@ -34,6 +37,7 @@ const AppNavigator = () => {
             <Stack.Screen name="Welcome" component={Welcome} />
             <Stack.Screen name="Login" component={Login} />
             <Stack.Screen name="Register" component={Register} />
+            <Stack.Screen name="MainTab" component={TabNavigator} />
         </Stack.Navigator>
     )
 }
